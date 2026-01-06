@@ -36,19 +36,22 @@
 
 ### 📂 Repository 구조
 
-`주차/문제명/이름.언어` 형식
+스터디는 **`주차/이름/문제.언어`** 구조로 관리합니다.
+
+매주 해당 주차 폴더 안에 **본인의 이름(ID)으로 된 폴더**를 생성해주세요.
 
 ```text
 Algorithm-Study/
-├── README.md
 ├── week01/
-│   ├── BOJ_1000_A+B/
-│   │   ├── ko.java
-│   │   └── kim.java
-│   └── BOJ_2557_Hello/
-│       ├── ryu.java
-│       └── park.cpp
+│   ├── noiskk/                <-- 본인 이름 폴더 생성
+│   │   ├── boj_1000.py        <-- 문제 소스코드
+│   │   └── boj_1001.py
+│   └── member1/
+│       ├── boj_1000.java
+│       └── boj_1001.java
 ├── week02/
+│   ├── noiskk/
+│   └── ...
 └── ...
 
 ```
@@ -62,17 +65,25 @@ Algorithm-Study/
 * 예: `git checkout -b noiskk/week1`
 
 
-3. 문제를 풀고 커밋합니다.
-* **Commit Message**: `[Week1] 이름_문제번호_문제이름`
-* 예: `[Week1] noiskk_1000_A+B`
+3. 해당 주차 폴더(`weekXX`) 안에 **본인의 이름으로 폴더를 생성**합니다.
+* 예: `week01/noiskk/`
 
 
-4. 원격 저장소(Origin)로 `push` 합니다.
+4. 문제를 풀고 소스코드를 업로드합니다.
+* **파일명 규칙**: `출처_문제번호.확장자` (소문자 권장)
+* 예: `boj_1001.java`, `pgs_42888.py`
+
+
+5. 커밋 후 원격 저장소로 `push` 합니다.
+* **Commit Message**: `[Week1] 문제번호_문제이름`
+* 예: `git commit -m "[Week1] BOJ_1000_A+B"`
 * 예: `git push origin noiskk/week1`
 
 
-5. Github에서 **Pull Request(PR)**를 생성합니다.
-6. 스터디 모임 전 서로의 코드를 리뷰(Comment)하고 `Merge` 합니다.
+6. Github에서 **Pull Request(PR)**를 생성합니다.
+7. 스터디 모임 전 서로의 코드를 리뷰(Comment)하고 `Merge` 합니다.
+
+
 
 <br>
 
