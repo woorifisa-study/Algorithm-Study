@@ -8,15 +8,29 @@
 
 ### 📜 운영 규칙
 
-- **주 5일(월~금)** 1일 1문제 풀이 필수
+- **주 6일(월~토)** 1일 1문제 풀이 필수
 - 문제 풀이 후 **Commit** & **Pull Request** 로 제출 인증
 - 매주 1회 오프라인 리뷰
-- 주말(토/일)은 부족한 공부 보충
 
 <br>
 
 ### 📖 문제 리스트
 [코딩테스트 대비 문제집 with Baekjoon](https://github.com/tony9402/baekjoon?tab=readme-ov-file)
+
+<br>
+
+**Week 01**
+
+| 요일 | 문제 번호 | 문제 이름 | 난이도 (Tier) |
+| --- | --- | --- | --- |
+| 화 | [18258](https://www.acmicpc.net/problem/18258) | [큐 2](https://www.acmicpc.net/problem/18258) | **실버 4** |
+| 화 | [10828](https://www.acmicpc.net/problem/10828) | [스택](https://www.acmicpc.net/problem/10828) | **실버 4** |
+| 수 | [20154](https://www.acmicpc.net/problem/20154) | [이 구역의 승자는 누구야?!](https://www.acmicpc.net/problem/20154) | **브론즈 1** |
+| 수 | [10866](https://www.acmicpc.net/problem/10866) | [덱](https://www.acmicpc.net/problem/10866) | **실버 4** |
+| 목 | [9012](https://www.acmicpc.net/problem/9012) | [괄호](https://www.acmicpc.net/problem/9012) | **실버 4** |
+| 금 | [1158](https://www.acmicpc.net/problem/1158) | [요세푸스 문제](https://www.acmicpc.net/problem/1158) | **실버 4** |
+| 토 | [4659](https://www.acmicpc.net/problem/4659) | [비밀번호 발음하기](https://www.acmicpc.net/problem/4659) | **실버 5** |
+
 
 <br>
 
