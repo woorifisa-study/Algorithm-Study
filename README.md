@@ -9,7 +9,6 @@
 ### 📜 운영 규칙
 
 - **주 6일(월~토)** 1일 1문제 풀이 필수
-- 문제 풀이 후 **Commit** & **Pull Request** 로 제출 인증
 - 매주 1회 오프라인 리뷰
 
 <br>
@@ -55,35 +54,6 @@ Algorithm-Study/
 └── ...
 
 ```
-
-<br>
-
-### 💾 참여 방법 (Git Workflow)
-
-1. 이 저장소를 `clone` 합니다.
-2. 매주 본인의 브랜치를 생성합니다. (규칙: `이름/주차`)
-* 예: `git checkout -b noiskk/week1`
-
-
-3. 해당 주차 폴더(`weekXX`) 안에 **본인의 이름으로 폴더를 생성**합니다.
-* 예: `week01/noiskk/`
-
-
-4. 문제를 풀고 소스코드를 업로드합니다.
-* **파일명 규칙**: `출처_문제번호.확장자` (소문자 권장)
-* 예: `boj_1001.java`, `pgs_42888.py`
-
-
-5. 커밋 후 원격 저장소로 `push` 합니다.
-* **Commit Message**: `[Week1] 문제번호_문제이름`
-* 예: `git commit -m "[Week1] BOJ_1000_A+B"`
-* 예: `git push origin noiskk/week1`
-
-
-6. Github에서 **Pull Request(PR)**를 생성합니다.
-7. 스터디 모임 전 서로의 코드를 리뷰(Comment)하고 `Merge` 합니다.
-
-
 
 <br>
 
