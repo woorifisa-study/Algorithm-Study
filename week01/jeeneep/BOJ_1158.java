@@ -3,7 +3,7 @@ package jeeneep;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class BOJ_1158 {
         public static void main(String[] args) throws IOException {
 
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -24,12 +24,13 @@ public class Main {
                 for (int i = 0; i < K - 1; i ++) {
                     queue.offer(queue.poll());
                 }
-                sb.append(queue.poll());
-
-                if (queue.isEmpty()) sb.append(">");
-                else sb.append(", ");
+                sb.append(queue.poll()).append(", ");
             }
 
-             System.out.println(sb);
+            sb.delete(sb.length() - 2, sb.length());
+            sb.append(">");
+
+            System.out.println(sb);
+
         }
 }

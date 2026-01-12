@@ -3,7 +3,7 @@ package jeeneep;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class BOJ_4659 {
     public static void main(String[] args) throws IOException {
 
 
