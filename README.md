@@ -24,11 +24,11 @@
 
 | 요일 | 문제 번호 | 문제 이름 | 난이도 (Tier) |
 | --- | --- | --- | --- |
-| 월 | [17478](https://www.acmicpc.net/problem/17478) | [재귀함수가 뭔가요?](https://www.acmicpc.net/problem/17478) | **실버 5** |
-| 화 | [4396](https://www.acmicpc.net/problem/4396) | [지뢰찾기](https://www.acmicpc.net/problem/4396) | **실버 4** |
-| 수 | [2578](https://www.acmicpc.net/problem/2578) | [빙고](https://www.acmicpc.net/problem/2578) | **실버 4** |
-| 목 | [10994](https://www.acmicpc.net/problem/10994) | [별 찍기 - 19](https://www.acmicpc.net/problem/10994) | **실버 4** |
-| 금 | [22858](https://www.acmicpc.net/problem/22858) | [원상 복구 (small)](https://www.acmicpc.net/problem/22858) | **실버 3** |
+| 월 | [4396](https://www.acmicpc.net/problem/4396) | [지뢰찾기](https://www.acmicpc.net/problem/4396) | **실버 4** |
+| 화 | [2578](https://www.acmicpc.net/problem/2578) | [빙고](https://www.acmicpc.net/problem/2578) | **실버 4** |
+| 수 | [10994](https://www.acmicpc.net/problem/10994) | [별 찍기 - 19](https://www.acmicpc.net/problem/10994) | **실버 4** |
+| 목 | [22858](https://www.acmicpc.net/problem/22858) | [원상 복구 (small)](https://www.acmicpc.net/problem/22858) | **실버 3** |
+| 금 | [1780](https://www.acmicpc.net/problem/1780) | [종이의 개수](https://www.acmicpc.net/problem/1780) | **실버 2** |
 | 토 | [11729](https://www.acmicpc.net/problem/11729) | [하노이 탑 이동 순서](https://www.acmicpc.net/problem/11729) | **골드 5** |
 
 
