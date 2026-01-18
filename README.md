@@ -15,6 +15,22 @@
 
 ### 📖 문제 리스트
 [코딩테스트 대비 문제집 with Baekjoon](https://github.com/tony9402/baekjoon?tab=readme-ov-file)
+[바킹독의 실전 알고리즘](https://github.com/encrypted-def/basic-algo-lecture/blob/master/workbook.md)
+
+
+<br>
+
+**Week 03**
+
+| 요일 | 문제 번호 | 문제 이름 | 난이도 (Tier) |
+| --- | --- | --- | --- |
+| 월 | [17478](https://www.acmicpc.net/problem/17478) | [재귀함수가 뭔가요?](https://www.acmicpc.net/problem/17478) | **실버 5** |
+| 화 | [4396](https://www.acmicpc.net/problem/4396) | [지뢰찾기](https://www.acmicpc.net/problem/4396) | **실버 4** |
+| 수 | [2578](https://www.acmicpc.net/problem/2578) | [빙고](https://www.acmicpc.net/problem/2578) | **실버 4** |
+| 목 | [10994](https://www.acmicpc.net/problem/10994) | [별 찍기 - 19](https://www.acmicpc.net/problem/10994) | **실버 4** |
+| 금 | [22858](https://www.acmicpc.net/problem/22858) | [원상 복구 (small)](https://www.acmicpc.net/problem/22858) | **실버 3** |
+| 토 | [11729](https://www.acmicpc.net/problem/11729) | [하노이 탑 이동 순서](https://www.acmicpc.net/problem/11729) | **골드 5** |
+
 
 <br>
 
@@ -29,17 +45,7 @@
 | 금 | [20291](https://www.acmicpc.net/problem/20291) | [파일 정리](https://www.acmicpc.net/problem/20291) | **실버 4** |
 | 토 | [1927](https://www.acmicpc.net/problem/1927) | [최소 힙](https://www.acmicpc.net/problem/1927) | **실버 2** |
 
-**Week 01**
 
-| 요일 | 문제 번호 | 문제 이름 | 난이도 (Tier) |
-| --- | --- | --- | --- |
-| 화 | [18258](https://www.acmicpc.net/problem/18258) | [큐 2](https://www.acmicpc.net/problem/18258) | **실버 4** |
-| 화 | [10828](https://www.acmicpc.net/problem/10828) | [스택](https://www.acmicpc.net/problem/10828) | **실버 4** |
-| 수 | [20154](https://www.acmicpc.net/problem/20154) | [이 구역의 승자는 누구야?!](https://www.acmicpc.net/problem/20154) | **브론즈 1** |
-| 수 | [10866](https://www.acmicpc.net/problem/10866) | [덱](https://www.acmicpc.net/problem/10866) | **실버 4** |
-| 목 | [9012](https://www.acmicpc.net/problem/9012) | [괄호](https://www.acmicpc.net/problem/9012) | **실버 4** |
-| 금 | [1158](https://www.acmicpc.net/problem/1158) | [요세푸스 문제](https://www.acmicpc.net/problem/1158) | **실버 4** |
-| 토 | [4659](https://www.acmicpc.net/problem/4659) | [비밀번호 발음하기](https://www.acmicpc.net/problem/4659) | **실버 5** |
 
 
 <br>
