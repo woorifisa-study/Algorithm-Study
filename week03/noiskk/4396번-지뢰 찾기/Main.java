@@ -24,10 +24,13 @@ public class Main{
 
         N = Integer.parseInt(br.readLine());
 
+        // 지뢰 위치
         bomb = new boolean[N][N];
 
+        // 결과 출력용
         char[][] result = new char[N][N];
 
+        // 지뢰 위치 입력 받기 
         for (int i = 0; i < N; i++) {
             String inputLine = br.readLine();
             for (int j = 0; j < N; j++) {
@@ -36,11 +39,12 @@ public class Main{
             }
         }
 
+        // 게임 진행 상태 입력 받기        
         for (int i = 0; i < N; i++) {
             String inputLine = br.readLine();
             for (int j = 0; j < N; j++) {
                 if(inputLine.charAt(j) == 'x'){
-                    // check
+                    // 열린 칸 확인
                     result[i][j] = Integer.toString(check(i, j)).charAt(0);
                 } else {
                     result[i][j] = '.';
@@ -48,6 +52,7 @@ public class Main{
             }
         }
 
+        // 지뢰 열린 경우, 모든 지뢰 위치 출력
         if(gameOver){
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < N; j++) {
@@ -57,7 +62,8 @@ public class Main{
                 }
             }
         }
-        
+
+        // 열린 칸 출력
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 sb.append(result[i][j]);
@@ -70,12 +76,13 @@ public class Main{
     }
 
 
-    public static int check(int x, int y){
+    public static int check(int x, int y){ // 열린 칸의 숫자 계산 후 반환
         int[] dx = {-1, 0, 1};
         int[] dy = {-1, 0, 1};
 
         int count = 0;
 
+        // 열린 칸이 지뢰일 경우
         if(bomb[x][y]){
             gameOver = true;
         }
