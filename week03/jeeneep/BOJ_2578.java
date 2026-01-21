@@ -4,16 +4,29 @@ import java.io.*;
 import java.util.*;
 
 public class BOJ_2578 {
+
+    static class Point {
+        int r;
+        int c;
+
+        Point (int r, int c) {
+            this.r = r;
+            this.c = c;
+        }
+    }
+
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+        Map<Integer, Point> posMap = new HashMap();
         // 빙고판에 쓰여진 수 입력
         int[][] bingo = new int[5][5];
         for (int i = 0; i < 5; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine(), " ");
             for (int j = 0; j < 5; j++) {
-                bingo[i][j] = Integer.parseInt(st.nextToken());
+                int num = Integer.parseInt(st.nextToken());
+                posMap.put(num, new Point(i, j));
             }
         }
 
@@ -29,22 +42,22 @@ public class BOJ_2578 {
         
         // 수가 지워졌는지 체크하는 배열, 기본값 false / 수가 지워지면 true
         boolean[][] result = new boolean[5][5]; 
-        for (int i = 0; i < 25; i++) {        
-            for (int j = 0; j < 5; j++) {
-                for (int k = 0; k < 5; k++) {
-                    
-                    // 일치하는 수가 있을 경우
-                    if (input[i] == bingo[j][k]) {
-                        result[j][k] = true;
-                       
-                        // 3줄 이상이면
-                        if (checkBingo(result) >= 3) {
-                            System.out.println(i + 1);
-                            return;
-                        }
-                    }
+        for (int i = 0; i < 25; i++) {     
+            
+            Point p = posMap.get(input[i]);
+
+            if(p != null) {
+                
+                result[p.r][p.c] = true;
+    
+                // 3줄 이상이면
+                if (checkBingo(result) >= 3) {
+                    System.out.println(i + 1);
+                    return;
                 }
+
             }
+  
         }
     }
     
