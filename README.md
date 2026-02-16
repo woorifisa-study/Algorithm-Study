@@ -20,6 +20,23 @@
 
 <br>
 
+### 설 연휴에는 못 푼 문제나 부족한 부분 각자 보충하기로 해요 :)
+
+### 6주차 카테고리는 "수학"입니다 ㅎㅎㅎ
+
+**Week 06**
+
+| 요일 | 문제 번호 | 문제 이름 | 난이도 (Tier) |
+| --- | --- | --- | --- |
+| 목 | [10250](https://www.acmicpc.net/problem/10250) | [ACM 호텔](https://www.acmicpc.net/problem/10250) | **브론즈 3** |
+| 금 | [4796](https://www.acmicpc.net/problem/4796) | [캠핑](https://www.acmicpc.net/problem/4796) | **브론즈 1** |
+| 토 | [9613](https://www.acmicpc.net/problem/9613) | [GCD 합](https://www.acmicpc.net/problem/9613) | **실버 4** |
+| 추가 | [2960](https://www.acmicpc.net/problem/2960) | [에라토스테네스의 체](https://www.acmicpc.net/problem/2960) | **실버 4** |
+
+<br>
+
+---
+
 **Week 05**
 
 | 요일 | 문제 번호 | 문제 이름 | 난이도 (Tier) |
