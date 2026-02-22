@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 // 10250
-public class Main {
+public class BOJ_10250 {
 
     public static void main(String[] args) throws IOException {
 
