@@ -11,7 +11,7 @@ public class BOJ_4796 {
         StringTokenizer st;
         StringBuilder sb = new StringBuilder();
 
-        int L, P, V, result, remain;
+        int L, P, V, result;
         int count = 0;
         while (true) {
             count++;
