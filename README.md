@@ -15,14 +15,35 @@
 
 ### 📖 문제 리스트
 [코딩테스트 대비 문제집 with Baekjoon](https://github.com/tony9402/baekjoon?tab=readme-ov-file)
+
 [바킹독의 실전 알고리즘](https://github.com/encrypted-def/basic-algo-lecture/blob/master/workbook.md)
 
+---
 
 <br>
 
-### 설 연휴에는 못 푼 문제나 부족한 부분 각자 보충하기로 해요 :)
+**Week 07**
 
-### 6주차 카테고리는 "수학"입니다 ㅎㅎㅎ
+**BFS 공부 자료 https://blog.encrypted.gg/941**
+
+**DFS 공부 자료 https://blog.encrypted.gg/942**
+
+
+| 요일 | 문제 번호 | 문제 이름 | 난이도 |
+| --- | --- | --- | --- |
+| 월 | [1260](https://www.acmicpc.net/problem/1260) | [DFS와 BFS](https://www.acmicpc.net/problem/1260) | **실버 2** |
+| 화 | [2606](https://www.acmicpc.net/problem/2606) | [바이러스](https://www.acmicpc.net/problem/2606) | **실버 3** |
+| 수 | [11724](https://www.acmicpc.net/problem/11724) | [연결 요소의 개수](https://www.acmicpc.net/problem/11724) | **실버 2** |
+| 목 | [2178](https://www.acmicpc.net/problem/2178) | [미로 탐색](https://www.acmicpc.net/problem/2178) | **실버 1** |
+| 금 | [1926](https://www.acmicpc.net/problem/1926) | [그림](https://www.acmicpc.net/problem/1926) | **실버 1** |
+| 토 | [11725](https://www.acmicpc.net/problem/11725) | [트리의 부모 찾기](https://www.acmicpc.net/problem/11725) | **실버 2** |
+
+<br>
+<br>
+
+---
+
+<br>
 
 **Week 06**
 
@@ -34,8 +55,6 @@
 | 추가 | [2960](https://www.acmicpc.net/problem/2960) | [에라토스테네스의 체](https://www.acmicpc.net/problem/2960) | **실버 4** |
 
 <br>
-
----
 
 **Week 05**
 
