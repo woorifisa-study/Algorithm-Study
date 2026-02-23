@@ -34,4 +34,5 @@ public class BOJ_9613 {
         if (b == 0) return a;
         return gcd(b, a % b);
     }
+    
 }
