@@ -1,0 +1,39 @@
+import java.io.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		int h, w;
+		int x1, x2, y1, y2;
+		boolean[] ans = new boolean[3];
+
+		String[] tmp = br.readLine().split(" ");
+		h = Integer.parseInt(tmp[0]);
+		w = Integer.parseInt(tmp[1]);
+		
+		tmp = br.readLine().split(" ");
+		x1 = Integer.parseInt(tmp[0]); 
+		y1 = Integer.parseInt(tmp[1]);
+		
+		tmp = br.readLine().split(" ");
+		x2 = Integer.parseInt(tmp[0]); 
+		y2 = Integer.parseInt(tmp[1]);
+
+		if(check(x1, y1, x2, y2, w, h) ||
+			check(y1, x1, x2, y2, w, h) ||
+			check(x1, y1, y2, x2, w, h) ||
+			check(y1, x1, y2, x2, w, h)) {
+			System.out.print("YES");
+			} else System.out.print("NO");
+
+
+	}
+
+	static boolean check(int x1, int y1, int x2, int y2, int w, int h) {
+				if((x1+x2 <= w && Math.max(y1, y2) <= h)|| 
+			 (y1+y2 <= h && Math.max(x1, x2) <= w)) {
+			return true;
+		}
+		else return false;
+	}
+}
