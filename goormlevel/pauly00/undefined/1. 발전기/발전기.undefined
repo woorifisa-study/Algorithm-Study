@@ -1,0 +1,69 @@
+import java.io.*;
+import java.util.*;
+class Main {
+
+	static int n;
+	static int[][] input;
+	static boolean[][] isVisited;
+	static int count=0;
+
+	static int[] dr = {-1, 1, 0,0};
+	static int[] dc = {0,0, -1, 1};
+	
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		n = Integer.parseInt(br.readLine());
+		input = new int[n][n];
+
+
+		// 줄로 받으므로 stringtokenizer 사용해야함
+		for(int i=0; i<n; i++) {
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			for(int j=0; j<n; j++) {
+				input[i][j] = Integer.parseInt(st.nextToken()); //여기서 토큰쪼개기
+			}
+		}
+		isVisited = new boolean[n][n];
+
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<n; j++) {
+				// 미방문, 1일 때
+				if(!isVisited[i][j] && input[i][j] == 1) {
+					BFS(i, j); // DFS는 런타임에러 발생
+					count++;
+				}
+			}
+		}
+		System.out.println(count);
+}
+	
+	public static void BFS(int row, int col) {
+		Queue<int[]> q = new LinkedList<>();
+
+		q.add(new int[]{row, col}); // 먼저 넣은 것을 꺼낸다.
+		isVisited[row][col] = true;
+
+		while(!q.isEmpty()){
+
+			int[] current = q.poll();
+			int currentRow = current[0];
+			int currentCol = current[1];
+
+			for(int i=0; i<4; i++) {
+				int nr = currentRow + dr[i];
+				int nc = currentCol + dc[i];
+	
+				// 상하좌우 검사
+				if(nr>=0 && nr<n && nc>=0 && nc<n &&
+					 input[nr][nc] ==1 && !isVisited[nr][nc]) {
+					// DFS(nr, nc);
+					isVisited[nr][nc] = true;
+					q.add(new int[]{nr, nc});
+				}
+			}
+		}
+		
+
+		
+	}
+}
