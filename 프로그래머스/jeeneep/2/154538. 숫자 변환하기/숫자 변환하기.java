@@ -3,54 +3,30 @@ import java.util.*;
 class Solution {
     public int solution(int x, int y, int n) {
         
-        // 이미 x와 y가 같은 경우
         if (x == y) return 0;
         
-        Queue<Node> queue = new ArrayDeque<>();
-        queue.add(new Node(x, 0)); // 시작점 큐에 넣기
+        int[] dp = new int[y+1];
+        Arrays.fill(dp, 1000005);
         
-        boolean[] visited = new boolean[y+1];
-        visited[x] = true; // 시작점 방문 체크
+        dp[x] = 0;
         
-        Node node;
         int nextNum;
-        while (!queue.isEmpty()) {            
-            node = queue.poll();
+        for (int i = x; i <= y; i++) {
+            if (dp[i] == 1000005) continue;
             
-            if (node.num == y) return node.count;
+            nextNum = i + n;
+            if (nextNum <= y) dp[nextNum] = Math.min(dp[nextNum], dp[i] + 1);
             
-            else if (node.num < y) {
-                
-                nextNum = node.num + n;
-                if ((nextNum <= y) && !visited[nextNum]) {
-                    visited[nextNum] = true;
-                    queue.add(new Node(nextNum, node.count + 1)); 
-                }
-                
-                nextNum = node.num * 2;
-                if ((nextNum <= y) && !visited[nextNum]) {
-                    visited[nextNum] = true;
-                    queue.add(new Node(nextNum, node.count + 1)); 
-                }
-                
-                nextNum = node.num * 3;
-                if ((nextNum <= y) &&!visited[nextNum]) {
-                    visited[nextNum] = true;
-                    queue.add(new Node(nextNum, node.count + 1)); 
-                }
-            }
+            nextNum = i * 2;
+            if (nextNum <= y) dp[nextNum] = Math.min(dp[nextNum], dp[i] + 1);
+            
+            nextNum = i * 3;
+            if (nextNum <= y) dp[nextNum] = Math.min(dp[nextNum], dp[i] + 1);
         }
         
-        return -1;
-    }
-    
-    static class Node {
-        int num;
-        int count;
+        if (dp[y] == 1000005) return -1;
         
-        public Node(int num, int count) {
-            this.num = num;
-            this.count = count;
-        }        
-    }
+        return dp[y];
+        
+    }    
 }
