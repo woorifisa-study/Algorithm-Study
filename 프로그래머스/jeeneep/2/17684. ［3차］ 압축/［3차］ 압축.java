@@ -3,48 +3,34 @@ import java.util.*;
 class Solution {
     public int[] solution(String msg) {
         
+        List<Integer> answer = new ArrayList<>(); 
+        
         // 사전 초기화
         Map<String, Integer> dictionary = new HashMap<>();
         for (int i = 0; i < 26; i++) {
-            dictionary.put(String.valueOf((char)('A' + i)), (i+1));
+            dictionary.put(String.valueOf((char)('A' + i)), (i + 1));
         }
         
-        List<Integer> result = new ArrayList<>(); 
-        
-        int i = 0;
-        while (i < msg.length()) {
+        int nextIndex = 27;
+        String w = "";
+        for (int i = 0; i < msg.length(); i++) {
             
-            // w에 글자 붙이기
-            int j = 1;
-            String current = ""; // 가장 긴 단어 보관
-            int indexNum = 0; // 가장 긴 단어의 색인 번호 보관
-            String next = ""; // 검사할 w + c 보관   
-            while (i + j <= msg.length()) {
-
-                next = msg.substring(i, i + j);
-                if (dictionary.containsKey(next)) {
-                    current = next;
-                    indexNum = dictionary.get(current);
-                    j++;
-                }
-                else break;
-            }
-            // 새로운 단어 사전에 넣기
-           if (!dictionary.containsKey(next)) {
-                dictionary.put(next, dictionary.size() + 1);
-            }
-            // 색인 번호 리스트 추가
-            result.add(indexNum);
-            // i 업데이트
-            i += current.length();
+            String c = String.valueOf(msg.charAt(i));
+            String wc = w + c;
             
-        }
-                
-        int[] answer = new int[result.size()];
-        for (int k = 0; k < result.size(); k++) {
-            answer[k] = result.get(k);
+            if (dictionary.containsKey(wc)) { 
+                w = wc; // 사전에 존재하면 w를 wc로 업데이트
+            }
+            else {
+                answer.add(dictionary.get(w));
+                dictionary.put(wc, nextIndex++);
+                w = c;
+            }
         }
         
-        return answer; 
+        // 마지막 출력인 경우
+        if (!w.isEmpty()) answer.add(dictionary.get(w));
+        
+        return answer.stream().mapToInt(i -> i).toArray(); 
     }
 }
