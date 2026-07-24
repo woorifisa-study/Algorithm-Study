@@ -29,7 +29,8 @@ class Solution {
             // 최소성 만족
             boolean isMinimal = true;
             for (int j = 0; j < answer.size(); j++) {
-                if ((i & answer.get(j)) == answer.get(j)) isMinimal = false;
+                int ans = answer.get(j);
+                if ((i & ans) == ans) isMinimal = false;
             }
             if (isMinimal) answer.add(i);
                         
