@@ -10,9 +10,14 @@ class Solution {
             
             char c = s.charAt(i);
             
-            if (c == ')' && !stack.isEmpty()) {
+            if (c == ')' && stack.isEmpty()) {
+                return false;
+            }
+            
+            else if (c == ')' && !stack.isEmpty()) {
                 if (stack.peek() == '(') stack.pop();
             }
+            
             else {
                 stack.push(c);
             }
