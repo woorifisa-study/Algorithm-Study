@@ -25,30 +25,28 @@ class Solution {
         Arrays.fill(dist, -1);
         
         Queue<Integer> queue = new ArrayDeque<>();
-        queue.add(start);
+        queue.add(start);        
         dist[start] = 0;
         
-        while (!queue.isEmpty()) {
-            int cur = queue.poll();
-            
-            for (int next : graph.get(cur)) {
-                if (dist[next] == -1) {
-                    queue.add(next);
-                    dist[next] = dist[cur] + 1;
-                }
-            }
-        }
-        
-        int distMax = 0;
         int count = 0;
-        for (int i = 2; i <= n; i++) {
-            if (dist[i] > distMax) {
-                distMax = dist[i];
-                count = 1;
-            }
-            else if (dist[i] == distMax) count++;
-        }
         
+        while (!queue.isEmpty()) {
+            
+            int size = queue.size();
+            count = size;
+            
+            for (int i = 0; i < size; i++) {
+                int cur = queue.poll();
+            
+                for (int next : graph.get(cur)) {
+                    if (dist[next] == -1) {
+                        dist[next] = dist[cur] + 1;
+                        queue.add(next);
+                    }
+                }
+            }        
+        }
+                
         return count;
     }
 }
