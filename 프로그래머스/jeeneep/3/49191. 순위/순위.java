@@ -11,16 +11,12 @@ class Solution {
             floyd[b][a] = -1;
         }
         
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n; j++) {
-                for (int k = 1; k <= n; k++) {
+        for (int k = 1; k <= n; k++) {
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= n; j++) {
                     if (floyd[i][k] == 1 && floyd[k][j] == 1) {
                         floyd[i][j] = 1;
                         floyd[j][i] = -1;
-                    }
-                    if (floyd[i][k] == -1 && floyd[k][j] == -1) {
-                        floyd[i][j] = -1;
-                        floyd[j][i] = 1;
                     }
                 }
             }
