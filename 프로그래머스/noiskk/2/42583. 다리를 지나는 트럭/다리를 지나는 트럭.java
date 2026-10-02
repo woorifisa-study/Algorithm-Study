@@ -1,38 +1,58 @@
 import java.util.*;
 
 class Solution {
-    public int solution(int bridge_length, int weight, int[] truck_weights) {
+    
+    class Truck{
+        int weight;
+        int move;
         
-        Deque<int[]> queue = new ArrayDeque();
-        
-        int sum = truck_weights[0];
-        int time = 1;
-        int next = 1; // 트럭 인덱스
-        
-        queue.offer(new int[]{truck_weights[0], time});
-        
-        while(!queue.isEmpty() && next < truck_weights.length){
-            
-            time++;
-            
-            // 다리를 다 건던 트럭 계산
-            // 마지막 트럭이 올라간 시간 <= (현재 시간 - 다리 길이)
-            if(queue.peek()[1] <= time - bridge_length){
-                sum -= queue.poll()[0];
-            }
-
-            // 다리에 올라갈 수 있는지 확인 후 올라감
-            if(sum + truck_weights[next] <= weight){
-                sum += truck_weights[next];
-                queue.offer(new int[]{truck_weights[next], time});
-                next++;
-            }
+        public Truck(int weight){
+            this.weight = weight;
+            this.move = 1;
         }
         
-        while(!queue.isEmpty()){
+        public void moving(){
+            move++;
+        }
+    }
+    
+    
+    public int solution(int bridge_length, int weight, int[] truck_weights) {
+        
+        Deque<Truck> waitQ = new ArrayDeque<>();
+        Deque<Truck> moveQ = new ArrayDeque<>();
+        
+        for(int t : truck_weights){
+            waitQ.offer(new Truck(t));
+        }
+        
+        int time = 0;
+        int curWeight = 0;
+        
+        while(!waitQ.isEmpty() || !moveQ.isEmpty()){
+            
             time++;
-            if(queue.peek()[1] <= time - bridge_length){
-                queue.poll();
+            
+            if(moveQ.isEmpty()){
+                Truck t = waitQ.poll();
+                moveQ.offer(t);
+                curWeight += t.weight;
+                continue;
+            }
+            
+            for(Truck t : moveQ){
+                t.moving();
+            }
+            
+            if(moveQ.peek().move > bridge_length){
+                Truck t = moveQ.poll();
+                curWeight -= t.weight;
+            }
+            
+            if(!waitQ.isEmpty() && waitQ.peek().weight + curWeight <= weight){
+                Truck t = waitQ.poll();
+                moveQ.offer(t);
+                curWeight += t.weight;
             }
         }
         
