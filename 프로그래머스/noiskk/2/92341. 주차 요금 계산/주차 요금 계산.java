@@ -1,58 +1,65 @@
 import java.util.*;
 
+class Car {
+    String number;
+    int inTime;
+    int totalTime;
+    String status;
+    
+    public Car(String number, int inTime){
+        this.number = number;
+        this.inTime = inTime;
+        this.totalTime = 0;
+        this.status = "IN";
+    }
+    
+}
+
+
 class Solution {
     public int[] solution(int[] fees, String[] records) {
         
-        Map<String, Integer> inTimeMap = new HashMap<>();
-        Map<String, Integer> totalTimeMap = new HashMap<>();
+        TreeMap<String, Car> map = new TreeMap<>();
         
-        for(String record : records){
-            String[] parts = record.split(" ");
-            String time = parts[0];
-            String car = parts[1];
-            String type = parts[2];
+        for(int i = 0; i < records.length; i++){
+            String[] s = records[i].split(" ");
+            String[] t = s[0].split(":");
             
-            String[] hm = time.split(":");
-            int minutes = Integer.parseInt(hm[0]) * 60 + Integer.parseInt(hm[1]);
+            int time = Integer.parseInt(t[0]) * 60 + Integer.parseInt(t[1]);
+            String number = s[1];
+            String status = s[2];
             
-            if(type.equals("IN")){
-                inTimeMap.put(car, minutes);
+            if(!map.containsKey(number)){
+                map.put(number, new Car(number, time));                
+            } else if(status.equals("IN")){
+                Car car = map.get(number);
+                car.inTime = time;
+                car.status = "IN";
             } else {
-                int inTime = inTimeMap.remove(car);
-                int parkingTime = minutes - inTime;
-                totalTimeMap.put(car, totalTimeMap.getOrDefault(car, 0) + parkingTime);   
+                Car car = map.get(number);
+                car.totalTime += time - car.inTime;
+                car.status = "OUT";
             }
         }
         
-        // 끝까지 OUT 안 한 차량
-        for(Map.Entry<String, Integer> entry : inTimeMap.entrySet()){
-            int usage = 23 * 60 + 59 - entry.getValue();
-            totalTimeMap.put(entry.getKey(), totalTimeMap.getOrDefault(entry.getKey(), 0) + usage);
-        }
-    
-        List<String> cars = new ArrayList<>(totalTimeMap.keySet());
-        Collections.sort(cars);
+        int[] answer = new int[map.size()];
+        int idx = 0;
         
-        List<Integer> answer = new ArrayList<>();
-        for(String car : cars){
-            answer.add(calculateFee(fees, totalTimeMap.get(car)));
+        for(Car car : map.values()){
+            if(car.status.equals("IN")){
+                car.totalTime += 23 * 60 + 59 - car.inTime;
+            }
+            answer[idx++] = calcFee(fees, car.totalTime);
         }
         
-        return answer.stream().mapToInt(i -> i).toArray();
+        
+        return answer;
     }
     
-    private int calculateFee(int[] fees, int time){
-        
-        int basicTime = fees[0];
-        int basicFee = fees[1];
-        int unitTime = fees[2];
-        int unitFee = fees[3];
-        
-        if(time <= basicTime) return basicFee;
-        
-        int extra = time - basicTime;
-        int unit = (int) Math.ceil((double) extra / unitTime);
-
-        return basicFee + unit * unitFee;
+    int calcFee(int[] fees, int time){
+        int baseTime = fees[0], baseFee = fees[1], unitTime = fees[2], unitFee = fees[3];
+        if(time <= baseTime) return baseFee;
+        int extra = (time - baseTime + unitTime - 1) / unitTime;  // 올림
+        return baseFee + extra * unitFee;
     }
 }
