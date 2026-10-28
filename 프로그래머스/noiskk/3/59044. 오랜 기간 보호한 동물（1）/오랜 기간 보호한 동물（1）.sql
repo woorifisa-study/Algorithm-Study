@@ -1,19 +1,16 @@
--- 아직 입양을 못 간 동물 중, 가장 오래 보호소에 있었던 동물 3마리의 이름과 보호 시작일을 조회
--- 보호 시작일 순으로 조회
+-- 아직 입양을 못 간 동물 중, 가장 오래 보호소에 있었던 동물 3마리의 이름과 보호 시작일을 조회하는 SQL문을 작성해주세요. 이때 결과는 보호 시작일 순으로 조회해야 합니다.
 
--- 아직 입양을 못 간 동물 : animal_ins 에 있지만 animal_outs 에 없는 동물. 
 SELECT
-    ins.name AS NAME, ins.datetime AS DATETIME
+    i.name, i.datetime
 FROM
-    animal_ins AS ins
+    animal_ins i
 LEFT JOIN
-    animal_outs AS outs
+    animal_outs o
 ON
-    ins.animal_id = outs.animal_id
+    i.animal_id = o.animal_id
 WHERE
-    outs.animal_id IS NULL
+    o.datetime IS NULL
 ORDER BY
-    datetime
+    i.datetime
 LIMIT
     3;
-    
