@@ -1,53 +1,49 @@
 import java.util.*;
 class Solution {
-    
-    static boolean[][] visited; // 방문 여부
-    static int[][] dist; // 거리
-    static int[] dx = {1, 0, -1, 0}; // 하, 우, 상, 좌
-    static int[] dy = {0, 1, 0, -1}; // 하, 우, 상, 좌
+    static int[] dir_x = {-1, 0, 1, 0}; // 상우하좌
+    static int[] dir_y = {0, 1, 0, -1};
+    static int[][] dist; // 현재 거리
+    static boolean[][] visited;
     
     public int solution(int[][] maps) {
-     
-        int n = maps.length; // 행
-        int m = maps[0].length; // 열
-        visited = new boolean[n][m]; 
-        dist = new int[n][m];
+        
+        int w = maps.length;
+        int h = maps[0].length;
+        
+        dist = new int[w][h];
+        visited = new boolean[w][h];
         
         Queue<Point> queue = new ArrayDeque<>();
-        visited[0][0] = true; // (0, 0)을 방문했다고 표시
-        dist[0][0] = 1; 
-        queue.add(new Point(0, 0)); // 시작점 삽입
+        queue.add(new Point(0,0));
+        visited[0][0] = true;
+        dist[0][0] = 1;
         
-        while (!queue.isEmpty()) {
+        while(!queue.isEmpty()){
             Point cur = queue.poll();
-            if(cur.x == n-1 && cur.y == m-1){
+            if(cur.x == w-1 && cur.y == h-1){
                 return dist[cur.x][cur.y];
             }
-
-            for (int i = 0; i < 4; i++) { // 방향 탐색
-                int nx = cur.x + dx[i];
-                int ny = cur.y + dy[i];
-
-                // 범위 확인 및 조건 검증
-                if (nx < 0 || nx >= n || ny < 0 || ny >= m){
-                    continue;
-                } 
-                if (visited[nx][ny] || maps[nx][ny] == 0){
-                    continue;
-                } 
-
-                visited[nx][ny] = true; // 방문 표시
-                dist[nx][ny] = dist[cur.x][cur.y] + 1;
-                queue.add(new Point(nx, ny)); // 큐에 삽입
+            
+            for(int i = 0; i < 4; i++){
+                int new_x = cur.x + dir_x[i];
+                int new_y = cur.y + dir_y[i];
+                
+                if(new_x < 0 || new_x > w-1 || new_y < 0 || new_y > h-1) continue;
+                if(visited[new_x][new_y] || maps[new_x][new_y] == 0) continue;
+                
+                queue.add(new Point(new_x, new_y));
+                visited[new_x][new_y] = true;
+                dist[new_x][new_y] = dist[cur.x][cur.y] + 1;
             }
         }
-        
         return -1;
     }
     
-    static class Point {
-        int x, y;
-        Point(int x, int y) {
+    class Point {
+        int x;
+        int y;
+        
+        Point(int x, int y){
             this.x = x;
             this.y = y;
         }
